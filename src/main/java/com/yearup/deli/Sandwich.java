@@ -4,18 +4,23 @@ public class Sandwich extends Order{
     private String breadType;
     private int breadSize;
     private boolean toasted;
-    private String premiumToppings;
+
+    //private String premiumToppings;
+    private String meatToppings;
+    private String cheeseToppings;
     private String basicToppings;
     private double sandwichPrice;
 
-    public Sandwich(String breadType, int breadSize, boolean toasted, String premiumToppings, String basicToppings, double sandwichPrice) {
+    public Sandwich(String breadType, int breadSize, boolean toasted, String meatToppings, String cheeseToppings, String basicToppings, double sandwichPrice) {
         this.breadType = breadType;
         this.breadSize = breadSize;
         this.toasted = toasted;
-        this.premiumToppings = premiumToppings;
+        this.meatToppings = meatToppings;
+        this.cheeseToppings = cheeseToppings;
         this.basicToppings = basicToppings;
         this.sandwichPrice = sandwichPrice;
     }
+
     public String getBreadType() {
         return breadType;
     }
@@ -40,12 +45,20 @@ public class Sandwich extends Order{
         this.toasted = toasted;
     }
 
-    public String getPremiumToppings() {
-        return premiumToppings;
+    public String getMeatToppings() {
+        return meatToppings;
     }
 
-    public void setPremiumToppings(String premiumToppings) {
-        this.premiumToppings = premiumToppings;
+    public void setMeatToppings(String meatToppings) {
+        this.meatToppings = meatToppings;
+    }
+
+    public String getCheeseToppings() {
+        return cheeseToppings;
+    }
+
+    public void setCheeseToppings(String cheeseToppings) {
+        this.cheeseToppings = cheeseToppings;
     }
 
     public String getBasicToppings() {
@@ -58,5 +71,9 @@ public class Sandwich extends Order{
 
     public double getSandwichPrice() {
         return sandwichPrice;
+    }
+
+    public void setSandwichPrice(double sandwichPrice) {
+        this.sandwichPrice = sandwichPrice;
     }
 }
