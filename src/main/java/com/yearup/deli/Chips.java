@@ -3,13 +3,13 @@ package com.yearup.deli;
 public class Chips extends Order {
 
     private String kindOfChips;
-    private int nummberofChips;
+    private int numberOfChips;
 
     private double price;
 
-    public Chips(String kindOfChips, int nummberofChips, double price) {
+    public Chips(String kindOfChips, int numberOfChips, double price) {
         this.kindOfChips = kindOfChips;
-        this.nummberofChips = nummberofChips;
+        this.numberOfChips = numberOfChips;
         this.price = price;
     }
 
@@ -21,12 +21,12 @@ public class Chips extends Order {
         this.kindOfChips = kindOfChips;
     }
 
-    public int getNummberofChips() {
-        return nummberofChips;
+    public int getNumberOfChips() {
+        return numberOfChips;
     }
 
-    public void setNummberofChips(int nummberofChips) {
-        this.nummberofChips = nummberofChips;
+    public void setNumberOfChips(int numberOfChips) {
+        this.numberOfChips = numberOfChips;
     }
 
     @Override
