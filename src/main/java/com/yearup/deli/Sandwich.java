@@ -1,6 +1,6 @@
 package com.yearup.deli;
 
-public class Sandwich extends Order{
+public class Sandwich extends Order {
     private String breadType;
     private int breadSize;
     private boolean toasted;
@@ -70,10 +70,13 @@ public class Sandwich extends Order{
     }
 
     public double getSandwichPrice() {
+        if (breadSize == 4){
+            sandwichPrice = 5.5;
+        } else if (breadSize == 8) {
+            sandwichPrice = 7.0;
+        } else {
+            sandwichPrice = 8.5;
+        }
         return sandwichPrice;
-    }
-
-    public void setSandwichPrice(double sandwichPrice) {
-        this.sandwichPrice = sandwichPrice;
     }
 }
