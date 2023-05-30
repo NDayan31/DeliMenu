@@ -1,15 +1,11 @@
 package com.yearup.deli;
 
 public class Chips extends Order {
-
     private String kindOfChips;
-    private int numberOfChips;
-
     private double price;
 
-    public Chips(String kindOfChips, int numberOfChips, double price) {
+    public Chips(String kindOfChips, double price) {
         this.kindOfChips = kindOfChips;
-        this.numberOfChips = numberOfChips;
         this.price = price;
     }
 
@@ -21,20 +17,8 @@ public class Chips extends Order {
         this.kindOfChips = kindOfChips;
     }
 
-    public int getNumberOfChips() {
-        return numberOfChips;
-    }
-
-    public void setNumberOfChips(int numberOfChips) {
-        this.numberOfChips = numberOfChips;
-    }
-
     @Override
     public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+        return 1.5;
     }
 }
