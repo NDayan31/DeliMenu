@@ -1,9 +1,17 @@
 package com.yearup.deli;
 
 public class Order {
+    private double price;
+
+    public Order() {
+    }
+
+    public Order(double price) {
+        this.price = price;
+    }
 
     public double getPrice() {
-        return 0;
+        return price;
     }
 }
 

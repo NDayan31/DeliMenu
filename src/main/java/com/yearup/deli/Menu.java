@@ -79,6 +79,8 @@ public class Menu {
 
     private static void addDrink(Scanner scanner) {
         boolean exit = false;
+        String drinkSize = "";
+        String drinkType = "";
         while (!exit) {
             System.out.println("=============Drinks=============");
             System.out.println("\t1. Coke");
@@ -92,34 +94,40 @@ public class Menu {
             int selection = scanner.nextInt();
             switch (selection){
                 case 1: // Coke
-                    // enters quantity
-                    System.out.println("Added to cart");
-                    //adds to orders array
+                    drinkType = "Coke";
+                    System.out.print("Enter size(S,M,L): ");
+                    drinkSize = scanner.nextLine();
+                    drinkSize(drinkType,drinkSize);
                     break;
                 case 2: // Sprite
-                    // enters quantity
-                    System.out.println("Added to cart");
-                    //adds to orders array
+                    drinkType = "Sprite";
+                    System.out.print("Enter size(S,M,L): ");
+                    drinkSize = scanner.nextLine();
+                    drinkSize(drinkType,drinkSize);
                     break;
                 case 3: // Fruit Punch
-                    // enters quantity
-                    System.out.println("Added to cart");
-                    //adds to orders array
+                    drinkType = "Fruit Punch";
+                    System.out.print("Enter size(S,M,L): ");
+                    drinkSize = scanner.nextLine();
+                    drinkSize(drinkType,drinkSize);
                     break;
                 case 4: // Fanta
-                    // enters quantity
-                    System.out.println("Added to cart");
-                    //adds to orders array
+                    drinkType = "Fanta";
+                    System.out.print("Enter size(S,M,L): ");
+                    drinkSize = scanner.nextLine();
+                    drinkSize(drinkType,drinkSize);
                     break;
                 case 5: // Ginger Ale
-                    // enters quantity
-                    System.out.println("Added to cart");
-                    //adds to orders array
+                    drinkType = "Ginger Ale";
+                    System.out.print("Enter size(S,M,L): ");
+                    drinkSize = scanner.nextLine();
+                    drinkSize(drinkType,drinkSize);
                     break;
                 case 6: // Root Beer
-                    // enters quantity
-                    System.out.println("Added to cart");
-                    //adds to orders array
+                    drinkType = "Root Beer";
+                    System.out.print("Enter size(S,M,L): ");
+                    drinkSize = scanner.nextLine();
+                    drinkSize(drinkType,drinkSize);
                     break;
                 case 0:
                     System.out.println("Returning to main menu");
@@ -130,13 +138,27 @@ public class Menu {
             }
         }
     }
+    private static void drinkSize (String drinkType, String drinkSize) {
+        if (drinkSize.equalsIgnoreCase("s")){
+            //adds to orders array
+            System.out.println("Added to cart");
+        } else if (drinkSize.equalsIgnoreCase("m")) {
+            //adds to orders array
+            System.out.println("Added to cart");
+        } else if (drinkSize.equalsIgnoreCase("l")) {
+            //adds to orders array
+            System.out.println("Added to cart");
+        } else {System.out.println("Incorrect Input");}
+    }
+
     private static void addChips(Scanner scanner) {
+        String chipType = "";
         boolean exit = false;
         while (!exit) {
             System.out.println("=============Chips=============");
             System.out.println("\t1. Lay's Potato Chips");
             System.out.println("\t2. Tortilla Chips");
-            System.out.println("\t3. Tortilla Chips");
+            System.out.println("\t3. Lay's BBQ Chips");
             System.out.println("\t4. Salt & Vinegar Chips");
             System.out.println("\t5. Cheetos");
             System.out.println("\t6. Doritos");
@@ -145,32 +167,32 @@ public class Menu {
             int selection = scanner.nextInt();
             switch (selection){
                 case 1: // Lay's Potato Chips
-                    // enters quantity
+                    chipType = "Lay's Potato Chips";
                     System.out.println("Added to cart");
                     //adds to orders array
                     break;
                 case 2: // Tortilla Chips
-                    // enters quantity
+                    chipType = "Tortilla Chips";
                     System.out.println("Added to cart");
                     //adds to orders array
                     break;
-                case 3: // Tortilla Chips
-                    // enters quantity
+                case 3: // Lay's BBQ Chips
+                    chipType = "Lay's BBQ Chips";
                     System.out.println("Added to cart");
                     //adds to orders array
                     break;
                 case 4: // Salt & Vinegar Chips
-                    // enters quantity
+                    chipType = "Salt & Vinegar Chips";
                     System.out.println("Added to cart");
                     //adds to orders array
                     break;
                 case 5: // Cheetos
-                    // enters quantity
+                    chipType = "Cheetos";
                     System.out.println("Added to cart");
                     //adds to orders array
                     break;
                 case 6: // Doritos
-                    // enters quantity
+                    chipType = "Doritos";
                     System.out.println("Added to cart");
                     //adds to orders array
                     break;
