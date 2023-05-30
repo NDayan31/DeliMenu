@@ -3,13 +3,13 @@ package com.yearup.deli;
 import java.util.Scanner;
 
 public class Menu {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-    }
+    Scanner scanner = new Scanner(System.in);
 
-    private static void homeScreen(Scanner scanner) {
+
+    private void homeScreen(Scanner scanner) {
         boolean running = true;
         while (running) {
+            System.out.println("(っˆڡˆς) Welcome to Delicious Sandwiches! ( ˘▽˘)っ♨");
             System.out.println("1) New Order");
             System.out.println("0) Exit");
 
@@ -28,7 +28,7 @@ public class Menu {
         }
     }
 
-    private static void newOrder(Scanner scanner) {
+    private void newOrder(Scanner scanner) {
         boolean running = true;
         while (running) {
             System.out.println("1) Add Sandwich");
@@ -62,34 +62,49 @@ public class Menu {
         }
     }
 
-    private static void addSandwich(Scanner scanner) {
+    private void checkOut() {
+    }
+
+    private void addChips() {
+
+    }
+
+    private void addDrink() {
+
+    }
+
+    private void cancelOrder() {
+
+    }
+
+    private void addSandwich(Scanner scanner) {
         boolean running = true;
         while (running) {
             System.out.println("Select your bread:");
             String breadType = scanner.nextLine();
             System.out.println("Sandwich size:");
             int sandwichSize = scanner.nextInt();
-            System.out.println("Toppings:");
+            toppings();
             System.out.println("Would you like your sandwich toasted?");
             System.out.println("Would you like a drink?");
             System.out.println("Would you like chips?");
+
+        }
+
+    }
+
+    private void toppings() {
+        boolean running = true;
+        while (running) {
+            System.out.println("Meat:");
+            String meat = scanner.nextLine();
+            System.out.println("Extra meat?(y/n):");
+            String optionMeat = scanner.nextLine();
+            System.out.println("Extra meat:");
+            String extraMeat = scanner.nextLine();
         }
     }
-
-
-    private static void addDrink() {
-
-    }
-    private static void addChips() {
-    }
-    private static void checkOut() {
-    }
-    private static void cancelOrder() {
-
-    }
 }
-
-
 
 
 
