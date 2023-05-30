@@ -1,22 +1,26 @@
 package com.yearup.deli;
 
+import java.util.ArrayList;
+
 public class Sandwich extends Order {
     private String breadType;
     private int breadSize;
     private boolean toasted;
-
-    //private String premiumToppings;
-    private String meatToppings;
-    private String cheeseToppings;
+    private ArrayList <String> meatToppings;
+    private boolean extraMeatTopping;
+    private ArrayList <String> cheeseToppings;
+    private boolean extraCheeseTopping;
     private String basicToppings;
     private double sandwichPrice;
 
-    public Sandwich(String breadType, int breadSize, boolean toasted, String meatToppings, String cheeseToppings, String basicToppings, double sandwichPrice) {
+    public Sandwich(String breadType, int breadSize, boolean toasted, ArrayList<String> meatToppings,boolean extraMeatTopping, ArrayList<String> cheeseToppings, boolean extraCheeseTopping, String basicToppings, double sandwichPrice) {
         this.breadType = breadType;
         this.breadSize = breadSize;
         this.toasted = toasted;
         this.meatToppings = meatToppings;
+        this.extraMeatTopping = extraMeatTopping;
         this.cheeseToppings = cheeseToppings;
+        this.extraCheeseTopping = extraCheeseTopping;
         this.basicToppings = basicToppings;
         this.sandwichPrice = sandwichPrice;
     }
@@ -45,20 +49,36 @@ public class Sandwich extends Order {
         this.toasted = toasted;
     }
 
-    public String getMeatToppings() {
+    public ArrayList<String> getMeatToppings() {
         return meatToppings;
     }
 
-    public void setMeatToppings(String meatToppings) {
+    public boolean isExtraMeatTopping() {
+        return extraMeatTopping;
+    }
+
+    public void setExtraMeatTopping(boolean extraMeatTopping) {
+        this.extraMeatTopping = extraMeatTopping;
+    }
+
+    public void setMeatToppings(ArrayList<String> meatToppings) {
         this.meatToppings = meatToppings;
     }
 
-    public String getCheeseToppings() {
+    public ArrayList<String> getCheeseToppings() {
         return cheeseToppings;
     }
 
-    public void setCheeseToppings(String cheeseToppings) {
+    public void setCheeseToppings(ArrayList<String> cheeseToppings) {
         this.cheeseToppings = cheeseToppings;
+    }
+
+    public boolean isExtraCheeseTopping() {
+        return extraCheeseTopping;
+    }
+
+    public void setExtraCheeseTopping(boolean extraCheeseTopping) {
+        this.extraCheeseTopping = extraCheeseTopping;
     }
 
     public String getBasicToppings() {
@@ -70,12 +90,18 @@ public class Sandwich extends Order {
     }
 
     public double getSandwichPrice() {
-        if (breadSize == 4){
-            sandwichPrice = 5.5;
+        if (breadSize == 4) {
+            sandwichPrice = 5.5 + (meatToppings.size() * 1.00) + (cheeseToppings.size() * 0.75);
+            if (extraMeatTopping) {sandwichPrice += 0.5;}
+            if (extraCheeseTopping) {sandwichPrice += 0.3;}
         } else if (breadSize == 8) {
-            sandwichPrice = 7.0;
+            sandwichPrice = 7.0 + (meatToppings.size() * 2.00) + (cheeseToppings.size() * 1.5);
+            if (extraMeatTopping) {sandwichPrice += 1.0;}
+            if (extraCheeseTopping) {sandwichPrice += 0.6;}
         } else {
-            sandwichPrice = 8.5;
+            sandwichPrice = 8.5 + (meatToppings.size() * 3.00) + (cheeseToppings.size() * 2.25);
+            if (extraMeatTopping) {sandwichPrice += 1.5;}
+            if (extraCheeseTopping) {sandwichPrice += 0.9;}
         }
         return sandwichPrice;
     }
