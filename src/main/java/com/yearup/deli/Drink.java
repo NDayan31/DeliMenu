@@ -2,24 +2,22 @@ package com.yearup.deli;
 
 import java.time.LocalDateTime;
 
-public class Drink extends Order{
-    private int drinkQuantity;
+public class Drink extends Order {
     private String drinkType;
-
+    private String drinkSize;
     private double drinkPrice;
 
-    public Drink(int drinkQuantity, String drinkType,double drinkPrice) {
-        this.drinkQuantity = drinkQuantity;
+    public Drink(String drinkType, String drinkSize) {
         this.drinkType = drinkType;
-        this.drinkPrice = drinkPrice;
+        this.drinkSize = drinkSize;
     }
 
-    public int getDrinkQuantity() {
-        return drinkQuantity;
+    public String getDrinkSize() {
+        return drinkSize;
     }
 
-    public void setDrinkQuantity(int drinkQuantity) {
-        this.drinkQuantity = drinkQuantity;
+    public void setDrinkSize(String drinkSize) {
+        this.drinkSize = drinkSize;
     }
 
     public double getDrinkPrice() {
@@ -37,11 +35,15 @@ public class Drink extends Order{
     public void setDrinkType(String drinkType) {
         this.drinkType = drinkType;
     }
+
     @Override
     public double getPrice() {
-        return 0;
-    }
-    public boolean isFilled() {
-        return false;
+        if (drinkSize.equalsIgnoreCase("s")) {
+            return 2.0;
+        } else if (drinkSize.equalsIgnoreCase("m")) {
+            return 2.5;
+        } else {
+            return 3.0;
+        }
     }
 }
