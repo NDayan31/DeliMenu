@@ -41,7 +41,4 @@ public class Drink extends Order{
     public double getPrice() {
         return 0;
     }
-    public boolean isFilled() {
-        return false;
-    }
 }
