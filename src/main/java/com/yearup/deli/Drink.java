@@ -37,6 +37,14 @@ public class Drink extends Order {
     }
 
     @Override
+    public String toString() {
+        StringBuilder drink = new StringBuilder();
+        drink.append(drinkType).append(" ").append(drinkSize);
+        drink.append("\t<<Price: $").append(drinkPrice).append(">>");
+        return drink.toString();
+    }
+
+    @Override
     public double getPrice() {
         if (drinkSize.equalsIgnoreCase("s")) {
             return 2.0;

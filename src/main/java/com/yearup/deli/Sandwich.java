@@ -98,23 +98,23 @@ public class Sandwich extends Order {
         sandwich.append("\nMeat");
         for (int i = 0; i < meatToppings.size(); i++){
             if (i % 3 == 0){sandwich.append("\n");}
-            sandwich.append(meatToppings.get(i));
+            sandwich.append(meatToppings.get(i)).append(", ");
         }
-        if (extraMeatTopping) {sandwich.append("\nExtra Meat");}
+        if (extraMeatTopping) {sandwich.append("\n\tExtra Meat");}
 
         sandwich.append("\nCheese");
         for (int i = 0; i < cheeseToppings.size(); i++){
             if (i % 3 == 0){sandwich.append("\n");}
-            sandwich.append(cheeseToppings.get(i));
+            sandwich.append(cheeseToppings.get(i)).append(", ");
         }
-        if (extraCheeseTopping) {sandwich.append("\nExtra Cheese");}
+        if (extraCheeseTopping) {sandwich.append("\n\tExtra Cheese");}
 
         sandwich.append("\nOther Toppings and Sauces");
         for (int i = 0; i < basicToppings.size(); i++){
             if (i % 3 == 0){sandwich.append("\n");}
-            sandwich.append(basicToppings.get(i));
+            sandwich.append(basicToppings.get(i)).append(", ");
         }
-        sandwich.append("\tPrice: $").append(sandwichPrice);
+        sandwich.append("\t<<Price: $").append(sandwichPrice).append(">>");
 
 
         return sandwich.toString();

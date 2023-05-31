@@ -16,6 +16,13 @@ public class Chips extends Order {
     public void setKindOfChips(String kindOfChips) {
         this.kindOfChips = kindOfChips;
     }
+    @Override
+    public String toString() {
+        StringBuilder chip = new StringBuilder();
+        chip.append(kindOfChips);
+        chip.append("\t<<Price: $").append(price).append(">>");
+        return chip.toString();
+    }
 
     @Override
     public double getPrice() {
