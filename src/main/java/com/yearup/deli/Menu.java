@@ -230,18 +230,36 @@ public class Menu {
     }
 
     private void toppings() {
+
+        boolean extraMeat = false;
+        boolean extraCheese = false;
+
         boolean running = true;
         while (running) {
-            System.out.println("Meat:");
+            System.out.println("What Protein Would You Like? (Steak, Ham, Salami, RoastBeef, Chicken, Bacon):");
             String meat = scanner.nextLine();
-            System.out.println("Extra meat?(y/n):");
+
+            System.out.println("Would you Like Extra Portion In Your Sandwich?(y/n):");
             String extraMeatTopping = scanner.nextLine();
-            System.out.println("Cheese:");
+            boolean extraMeatToppingBoolean = extraMeatTopping.equalsIgnoreCase("y");
+            if (extraMeatToppingBoolean){
+                extraMeat = true;
+            }
+
+            System.out.println("Please Select Your Cheese(American, Provolone, Cheddar, Swiss):");
             String cheese = scanner.nextLine();
-            System.out.println("Extra cheese(y/n):");
+
+            System.out.println("Would you like Extra cheese(y/n):");
             String cheeseOption = scanner.nextLine();
-            System.out.println("Basic toppings:");
+            boolean extraCheeseOption = cheeseOption.equalsIgnoreCase("y");
+            if (extraCheeseOption){
+                extraCheese = true;
+            }
+
+            System.out.println("Please Select From our Free Toppings(Lettuce, Peppers, Onions, Tomatoes, Jalapenos, Cucumbers, Pickles, Guacamole, Mushrooms):");
             String basicToppings = scanner.nextLine();
+            System.out.println("Would you Like Any Sauce With your Order");
+
         }
             //print arraylist
         /*private void diplayOrder() {
