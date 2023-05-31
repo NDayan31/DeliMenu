@@ -1,26 +1,28 @@
 package com.yearup.deli;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class ReceiptFileManager {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {*/
 
+    public ReceiptFileManager() {
 
+        Path receiptsFolder = Path.of("Receipts");
         try {
-            File file = new File("CustomerReciepts.txt");
-            FileWriter fw = new FileWriter(file, true);
-            fw.write("*example*/n");
-            fw.close();
-        } catch(Exception e) {
-            System.out.println("Error");
+            if (!Files.exists(receiptsFolder)) {
+                Files.createDirectory(receiptsFolder);
+            }
+
+        } catch (IOException e) {
+
 
         }
 
     }
-
-
 }
+
+
+
+
