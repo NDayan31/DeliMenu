@@ -81,16 +81,18 @@ public class Menu {
     }
 
     private void addSandwich(Scanner scanner) {
+        boolean isToasted = false;
         boolean running = true;
         while (running) {
-            System.out.println("Select your bread:     White     Wheat     Rye     Wrap");
+            System.out.print("Select your bread (White, Wheat, Rye, Wrap): ");
             String breadType = scanner.nextLine();
-            System.out.println("Sandwich size:         4' 5.50         8' $7.00         12' $8.00");
+            System.out.print("Sandwich size (4\", 8\", 12\"): ");
             int sandwichSize = scanner.nextInt();
             toppings();
-            System.out.println("Would you like your sandwich toasted?");
-            System.out.println("Would you like a drink?");
-            System.out.println("Would you like chips?");
+
+            System.out.print("Would you like your sandwich toasted? (Y/N): ");
+            String toastedOption = scanner.nextLine();
+            if (toastedOption.equalsIgnoreCase("y")) {isToasted = true;}
 
         }
     }
