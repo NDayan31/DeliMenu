@@ -95,7 +95,7 @@ public class Menu {
     }
         private void addDrink (Scanner scanner){
             boolean exit = false;
-            String drinkSize = "";0-=
+            String drinkSize = "";
             String drinkType = "";
             while (!exit) {
                 System.out.println("=============Drinks=============");
