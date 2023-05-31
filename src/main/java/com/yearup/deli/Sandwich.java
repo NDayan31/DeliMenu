@@ -10,10 +10,10 @@ public class Sandwich extends Order {
     private boolean extraMeatTopping;
     private ArrayList <String> cheeseToppings;
     private boolean extraCheeseTopping;
-    private String basicToppings;
+    private ArrayList<String> basicToppings;
     private double sandwichPrice;
 
-    public Sandwich(String breadType, int breadSize, boolean toasted, ArrayList<String> meatToppings,boolean extraMeatTopping, ArrayList<String> cheeseToppings, boolean extraCheeseTopping, String basicToppings, double sandwichPrice) {
+    public Sandwich(String breadType, int breadSize, boolean toasted, ArrayList<String> meatToppings,boolean extraMeatTopping, ArrayList<String> cheeseToppings, boolean extraCheeseTopping, ArrayList<String> basicToppings, double sandwichPrice) {
         this.breadType = breadType;
         this.breadSize = breadSize;
         this.toasted = toasted;
@@ -81,15 +81,47 @@ public class Sandwich extends Order {
         this.extraCheeseTopping = extraCheeseTopping;
     }
 
-    public String getBasicToppings() {
+    public ArrayList<String> getBasicToppings() {
         return basicToppings;
     }
 
-    public void setBasicToppings(String basicToppings) {
+    public void setBasicToppings(ArrayList<String> basicToppings) {
         this.basicToppings = basicToppings;
     }
 
-    public double getSandwichPrice() {
+    @Override
+    public String toString() {
+        StringBuilder sandwich = new StringBuilder();
+        sandwich.append("Custom Sandwich:\n");
+        sandwich.append(breadSize).append("\" ").append(breadType);
+        if (toasted) {sandwich.append(" toasted");}
+        sandwich.append("\nMeat");
+        for (int i = 0; i < meatToppings.size(); i++){
+            if (i % 3 == 0){sandwich.append("\n");}
+            sandwich.append(meatToppings.get(i));
+        }
+        if (extraMeatTopping) {sandwich.append("\nExtra Meat");}
+
+        sandwich.append("\nCheese");
+        for (int i = 0; i < cheeseToppings.size(); i++){
+            if (i % 3 == 0){sandwich.append("\n");}
+            sandwich.append(cheeseToppings.get(i));
+        }
+        if (extraCheeseTopping) {sandwich.append("\nExtra Cheese");}
+
+        sandwich.append("\nOther Toppings and Sauces");
+        for (int i = 0; i < basicToppings.size(); i++){
+            if (i % 3 == 0){sandwich.append("\n");}
+            sandwich.append(basicToppings.get(i));
+        }
+        sandwich.append("\tPrice: $").append(sandwichPrice);
+
+
+        return sandwich.toString();
+    }
+
+    @Override
+    public double getPrice() {
         if (breadSize == 4) {
             sandwichPrice = 5.5 + (meatToppings.size() * 1.00) + (cheeseToppings.size() * 0.75);
             if (extraMeatTopping) {sandwichPrice += 0.5;}
