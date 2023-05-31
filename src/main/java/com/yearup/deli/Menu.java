@@ -230,9 +230,8 @@ public class Menu {
                 System.out.println("Meat:");
                 String meat = scanner.nextLine();
                 System.out.println("Extra meat?(y/n):");
-                String optionMeat = scanner.nextLine();
-                System.out.println("Extra meat:");
-                String extraMeat = scanner.nextLine();
+                String extraMeatTopping = scanner.nextLine();
+
             }
         }
     }
