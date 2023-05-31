@@ -2,7 +2,7 @@ package com.yearup.deli;
 
 import java.time.LocalDateTime;
 
-public class Drink extends Order {
+public class Drink {
     private String drinkType;
     private String drinkSize;
     private double drinkPrice;
@@ -44,7 +44,6 @@ public class Drink extends Order {
         return drink.toString();
     }
 
-    @Override
     public double getPrice() {
         if (drinkSize.equalsIgnoreCase("s")) {
             return 2.0;
