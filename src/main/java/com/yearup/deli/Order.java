@@ -10,7 +10,7 @@ public class Order {
         this.price = price;
     }
 
-    public double getPrice() {
+    public static double getPrice() {
         return price;
     }
 }
