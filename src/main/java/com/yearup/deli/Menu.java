@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in);
-    Order order = new Order();
+
 
 
     private void homeScreen(Scanner scanner) {
@@ -66,7 +66,9 @@ public class Menu {
 
     private void checkOut() {
 
-        System.out.println("Your Total is " + "$" + order.getPrice() + "Would You Be Paying Cash or Card");
+        //Print final price, Create a Receipt File, and go back to the homescreen
+
+        System.out.println("Your Total is " + "$" + Order.getPrice() + "Would You Be Paying Cash or Card");
         String paymentMethod = scanner.next();
 
         System.out.println("Thank You, Come Again");
@@ -80,9 +82,9 @@ public class Menu {
     private void addSandwich(Scanner scanner) {
         boolean running = true;
         while (running) {
-            System.out.println("Select your bread:");
+            System.out.println("Select your bread:     White     Wheat     Rye     Wrap");
             String breadType = scanner.nextLine();
-            System.out.println("Sandwich size:");
+            System.out.println("Sandwich size:         4' 5.50         8' $7.00         12' $8.00");
             int sandwichSize = scanner.nextInt();
             toppings();
             System.out.println("Would you like your sandwich toasted?");
@@ -93,7 +95,7 @@ public class Menu {
     }
         private void addDrink (Scanner scanner){
             boolean exit = false;
-            String drinkSize = "";
+            String drinkSize = "";0-=
             String drinkType = "";
             while (!exit) {
                 System.out.println("=============Drinks=============");
