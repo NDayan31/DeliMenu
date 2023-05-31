@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in);
+    Order order = new Order();
 
 
     private void homeScreen(Scanner scanner) {
@@ -54,6 +55,7 @@ public class Menu {
                     break;
                 case 0:
                     cancelOrder();
+                    running = false;
                     break;
                 default:
                     System.out.println("Invalid option");
@@ -63,10 +65,16 @@ public class Menu {
     }
 
     private void checkOut() {
+
+        System.out.println("Your Total is " + "$" + order.getPrice() + "Would You Be Paying Cash or Card");
+        String paymentMethod = scanner.next();
+
+        System.out.println("Thank You, Come Again");
+
     }
 
     private void cancelOrder() {
-
+        System.out.println("Thank You, Come Again!");
     }
 
     private void addSandwich(Scanner scanner) {
