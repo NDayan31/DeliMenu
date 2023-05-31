@@ -1,6 +1,6 @@
 package com.yearup.deli;
 
-public class Chips extends Order {
+public class Chips {
     private String kindOfChips;
     private double price;
 
@@ -24,7 +24,6 @@ public class Chips extends Order {
         return chip.toString();
     }
 
-    @Override
     public double getPrice() {
         return 1.5;
     }

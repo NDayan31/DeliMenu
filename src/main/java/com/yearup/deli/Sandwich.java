@@ -2,7 +2,7 @@ package com.yearup.deli;
 
 import java.util.ArrayList;
 
-public class Sandwich extends Order {
+public class Sandwich {
     private String breadType;
     private int breadSize;
     private boolean toasted;
@@ -120,7 +120,6 @@ public class Sandwich extends Order {
         return sandwich.toString();
     }
 
-    @Override
     public double getPrice() {
         if (breadSize == 4) {
             sandwichPrice = 5.5 + (meatToppings.size() * 1.00) + (cheeseToppings.size() * 0.75);

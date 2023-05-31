@@ -82,23 +82,81 @@ public class Menu {
     }
 
     private void addSandwich(Scanner scanner) {
-        boolean isToasted = false;
-        boolean running = true;
-        while (running) {
-            System.out.print("Select your bread (White, Wheat, Rye, Wrap): ");
-            String breadType = scanner.nextLine();
-            System.out.print("Sandwich size (4\", 8\", 12\"): ");
-            int sandwichSize = scanner.nextInt();
-            toppings();
+                boolean extraMeat = false;
+                boolean extraCheese = false;
+                boolean isToasted = false;
+                boolean exit = false;
+                while(!exit) {
+                    System.out.print("Select your bread (White, Wheat, Rye, Wrap): ");
+                    String breadType = scanner.nextLine().toLowerCase();
+                    switch (breadType){
+                        case "white","wheat","rye","wrap":
+                            exit = true;
+                            break;
+                        default:
+                            System.out.println("Incorrect entry, try again");
+                            break;
+                    }
+                }
+                boolean exit2 = false;
+                while(!exit2) {
+                    System.out.print("Sandwich size (4\", 8\", 12\"): ");
+                    int sandwichSize = scanner.nextInt();
+                    switch (sandwichSize){
+                        case 4,8,12:
+                            exit2 = true;
+                            break;
+                        default:
+                            System.out.println("Incorrect entry, try again");
+                            break;
+                    }
+                }
+                boolean exit3 = false;
+                String[] proteinInStock = {"Steak", "Ham", "Salami", "RoastBeef", "Chicken", "Bacon"};
+                ArrayList<String> proteinToSandwich = new ArrayList<>();
+                while (!exit3) {
+                    System.out.println("What Protein Would You Like? (X when done selection):");
+                    for (String s : proteinInStock) {
+                        System.out.print(s + " ");
+                    }
+                    String meat = scanner.nextLine();
+                    for (String s : proteinInStock) {
+                        if (meat.equalsIgnoreCase(s)) {
+                            proteinToSandwich.add(s);
+                        }
+                    }
+                }
+                boolean exit4 = false;
+                System.out.println("Would you Like Extra Portion In Your Sandwich?(y/n):");
+                String extraMeatTopping = scanner.nextLine();
+                if (extraMeatTopping.equalsIgnoreCase("y")) {extraMeat = true;}
 
-            System.out.print("Would you like your sandwich toasted? (Y/N): ");
-            String toastedOption = scanner.nextLine();
-            if (toastedOption.equalsIgnoreCase("y")) {
-                isToasted = true;
-            }
+                boolean exit5 = false;
+                System.out.println("Please Select Your Cheese(American, Provolone, Cheddar, Swiss):");
+                String cheese = scanner.nextLine();
+
+                boolean exit6 = false;
+                System.out.println("Would you like Extra cheese(y/n):");
+                String extraCheeseTopping = scanner.nextLine();
+                if (extraCheeseTopping.equalsIgnoreCase("y")) {extraCheese = true;}
+
+                boolean exit7 = false;
+                System.out.println("Please Select From our Free Toppings(Lettuce, Peppers, Onions, Tomatoes, Jalapenos, Cucumbers, Pickles, Guacamole, Mushrooms):");
+                String basicToppings = scanner.nextLine();
+
+                boolean exit8 = false;
+                System.out.println("Would you Like Any Sauce With your Order");
+                String sauces = scanner.nextLine();
+
+                boolean exit9 = false;
+                System.out.print("Would you like your sandwich toasted? (Y/N): ");
+                String toastedOption = scanner.nextLine();
+                if (toastedOption.equalsIgnoreCase("y")) {
+                    isToasted = true;
+                }
 
         }
-    }
+
 
     private void addDrink(Scanner scanner) {
         boolean exit = false;
@@ -231,56 +289,7 @@ public class Menu {
             }
         }
     }
-
-    private void toppings() {
-
-        boolean extraMeat = false;
-        boolean extraCheese = false;
-
-        boolean running = true;
-        while (running) {
-            System.out.println("What Protein Would You Like? (Steak, Ham, Salami, RoastBeef, Chicken, Bacon):");
-            String meat = scanner.nextLine();
-
-            System.out.println("Would you Like Extra Portion In Your Sandwich?(y/n):");
-            String extraMeatTopping = scanner.nextLine();
-            boolean extraMeatToppingBoolean = extraMeatTopping.equalsIgnoreCase("y");
-            if (extraMeatToppingBoolean) {
-                extraMeat = true;
-            }
-
-            System.out.println("Please Select Your Cheese(American, Provolone, Cheddar, Swiss):");
-            String cheese = scanner.nextLine();
-
-            System.out.println("Would you like Extra cheese(y/n):");
-            String cheeseOption = scanner.nextLine();
-            boolean extraCheeseOption = cheeseOption.equalsIgnoreCase("y");
-            if (extraCheeseOption) {
-                extraCheese = true;
-            }
-
-            System.out.println("Please Select From our Free Toppings(Lettuce, Peppers, Onions, Tomatoes, Jalapenos, Cucumbers, Pickles, Guacamole, Mushrooms):");
-            String basicToppings = scanner.nextLine();
-            System.out.println("Would you Like Any Sauce With your Order");
-
-        }
-    }
-        private void displayOrder () {
-            for (Order order : orders) {
-                if (order instanceof Sandwich) {
-                    System.out.println(order.toString());
-                } else if (order instanceof Drink) {
-                    System.out.println((order.toString()));
-                } else if (order instanceof Chips) {
-                    System.out.println((order.toString()));
-
-
-                }
-
-
-            }
-        }
-    }
+}
 
 
 
