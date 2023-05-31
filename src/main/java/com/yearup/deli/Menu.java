@@ -1,11 +1,12 @@
 package com.yearup.deli;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in);
 
-    //ArrayList<Order> orders = new ArrayList<>();
+    ArrayList<Order> orders = new ArrayList<>();
 
 
     private void homeScreen(Scanner scanner) {
@@ -92,7 +93,9 @@ public class Menu {
 
             System.out.print("Would you like your sandwich toasted? (Y/N): ");
             String toastedOption = scanner.nextLine();
-            if (toastedOption.equalsIgnoreCase("y")) {isToasted = true;}
+            if (toastedOption.equalsIgnoreCase("y")) {
+                isToasted = true;
+            }
 
         }
     }
@@ -242,7 +245,7 @@ public class Menu {
             System.out.println("Would you Like Extra Portion In Your Sandwich?(y/n):");
             String extraMeatTopping = scanner.nextLine();
             boolean extraMeatToppingBoolean = extraMeatTopping.equalsIgnoreCase("y");
-            if (extraMeatToppingBoolean){
+            if (extraMeatToppingBoolean) {
                 extraMeat = true;
             }
 
@@ -252,7 +255,7 @@ public class Menu {
             System.out.println("Would you like Extra cheese(y/n):");
             String cheeseOption = scanner.nextLine();
             boolean extraCheeseOption = cheeseOption.equalsIgnoreCase("y");
-            if (extraCheeseOption){
+            if (extraCheeseOption) {
                 extraCheese = true;
             }
 
@@ -261,15 +264,23 @@ public class Menu {
             System.out.println("Would you Like Any Sauce With your Order");
 
         }
-            //print arraylist
-        /*private void diplayOrder() {
+    }
+        private void displayOrder () {
             for (Order order : orders) {
-                if (order instanceof Sandwich) {*/
+                if (order instanceof Sandwich) {
+                    System.out.println(order.toString());
+                } else if (order instanceof Drink) {
+                    System.out.println((order.toString()));
+                } else if (order instanceof Chips) {
+                    System.out.println((order.toString()));
 
 
                 }
-            }
 
+
+            }
+        }
+    }
 
 
 
