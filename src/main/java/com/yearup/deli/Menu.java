@@ -68,13 +68,6 @@ public class Menu {
 
     private void checkOut() {
 
-        //Print final price, Create a Receipt File, and go back to the homescreen
-
-        System.out.println("Your Total is " + "$" + Order.getPrice() + "Would You Be Paying Cash or Card");
-        String paymentMethod = scanner.next();
-
-        System.out.println("Thank You, Come Again");
-
     }
 
     private void cancelOrder() {
