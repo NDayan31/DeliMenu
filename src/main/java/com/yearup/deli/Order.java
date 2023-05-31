@@ -13,18 +13,44 @@ public class Order {
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
     }
-    public void addSandwich () {
 
-    }
-    public void addDrinks () {
-
-    }
-    public void addChips () {
-
-    }
-    public void grandTotal () {
-
+    public void addSandwich(Sandwich sandwich) {
+        sandwiches.add(sandwich);
     }
 
+    public void addDrinks(Drink drink) {
+        drinks.add(drink);
+    }
+
+    public void addChips(Chips chip) {
+        chips.add(chip);
+    }
+    public void displayCart () {
+        System.out.println("==============CheckOut=============");
+        for (Sandwich sandwich : sandwiches) {
+            System.out.println(sandwich.toString());
+        }
+        for (Drink drink : drinks) {
+            System.out.println(drink.toString());
+        }
+        for (Chips chips1 : chips) {
+            System.out.println(chips1.toString());
+        }
+        System.out.println("===================================");
+        System.out.println("\tSub Total: $" + grandTotal());
+    }
+
+    public double grandTotal() {
+        double total = 0.0;
+        for (Sandwich sandwich : sandwiches) {
+            total += sandwich.getPrice();
+        }
+        for (Drink drink : drinks) {
+              total += drink.getDrinkPrice();
+        }
+        for (Chips chips1 : chips) {
+            total += chips1.getPrice();
+        }
+        return total;
+    }
 }
-
