@@ -26,13 +26,10 @@ public class Drink {
     public void setDrinkType(String drinkType) {
         this.drinkType = drinkType;
     }
-
     @Override
     public String toString() {
-        StringBuilder drink = new StringBuilder();
-        drink.append(drinkType).append(" ").append(drinkSize);
-        drink.append("\t<<Price: $").append(getPrice()).append(">>");
-        return drink.toString();
+        return drinkType + " " + drinkSize +
+                "\t<<Price: $" + getPrice() + ">>";
     }
 
     public double getPrice() {

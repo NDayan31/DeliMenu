@@ -11,9 +11,8 @@ public class Sandwich {
     private ArrayList <String> cheeseToppings;
     private boolean extraCheeseTopping;
     private ArrayList<String> basicToppings;
-    private double sandwichPrice;
 
-    public Sandwich(String breadType, int breadSize, boolean toasted, ArrayList<String> meatToppings,boolean extraMeatTopping, ArrayList<String> cheeseToppings, boolean extraCheeseTopping, ArrayList<String> basicToppings, double sandwichPrice) {
+    public Sandwich(String breadType, int breadSize, boolean toasted, ArrayList<String> meatToppings,boolean extraMeatTopping, ArrayList<String> cheeseToppings, boolean extraCheeseTopping, ArrayList<String> basicToppings) {
         this.breadType = breadType;
         this.breadSize = breadSize;
         this.toasted = toasted;
@@ -22,7 +21,6 @@ public class Sandwich {
         this.cheeseToppings = cheeseToppings;
         this.extraCheeseTopping = extraCheeseTopping;
         this.basicToppings = basicToppings;
-        this.sandwichPrice = sandwichPrice;
     }
 
     public String getBreadType() {
@@ -88,7 +86,6 @@ public class Sandwich {
     public void setBasicToppings(ArrayList<String> basicToppings) {
         this.basicToppings = basicToppings;
     }
-
     @Override
     public String toString() {
         StringBuilder sandwich = new StringBuilder();
@@ -114,13 +111,14 @@ public class Sandwich {
             if (i % 3 == 0){sandwich.append("\n");}
             sandwich.append(basicToppings.get(i)).append(", ");
         }
-        sandwich.append("\t<<Price: $").append(sandwichPrice).append(">>");
+        sandwich.append("\t<<Price: $").append(getPrice()).append(">>");
 
 
         return sandwich.toString();
     }
 
     public double getPrice() {
+        double sandwichPrice = 0.0;
         if (breadSize == 4) {
             sandwichPrice = 5.5 + (meatToppings.size() * 1.00) + (cheeseToppings.size() * 0.75);
             if (extraMeatTopping) {sandwichPrice += 0.5;}
