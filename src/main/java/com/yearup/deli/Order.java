@@ -13,6 +13,17 @@ public class Order {
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
     }
+    public List<Sandwich> getSandwiches() {
+        return sandwiches;
+    }
+
+    public List<Drink> getDrinks() {
+        return drinks;
+    }
+
+    public List<Chips> getChips() {
+        return chips;
+    }
 
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
