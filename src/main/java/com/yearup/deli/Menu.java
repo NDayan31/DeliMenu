@@ -9,6 +9,7 @@ public class Menu {
     Scanner scanner = new Scanner(System.in);
 
     ArrayList<Order> orders = new ArrayList<>();
+    ReceiptFileManager receiptFileManager = new ReceiptFileManager();
 
 
     public void homeScreen(Scanner scanner) {
@@ -82,7 +83,8 @@ public class Menu {
         int command = scanner.nextInt();
         switch (command) {
             case 1:
-                // Create receipt here
+                System.out.println("Thank you For your Order");
+                receiptFileManager.createReceipt();
                 break;
             case 2:
                 cancelOrder();
@@ -230,6 +232,7 @@ public class Menu {
                 System.out.println(s8 + " ");
             }
             String sauces = scanner.nextLine();
+            System.out.println("What other Sauces would you like? (x when done with selection):");
             if (sauces.equalsIgnoreCase("x")) {
                 exit8 = true;
             } else {
