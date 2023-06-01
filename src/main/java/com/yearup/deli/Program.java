@@ -7,5 +7,6 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
         menu.homeScreen(scanner);
+        ReceiptFileManager receiptFileManager = new ReceiptFileManager();
     }
 }
