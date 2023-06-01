@@ -92,21 +92,21 @@ public class Sandwich {
         sandwich.append("Custom Sandwich:\n");
         sandwich.append(breadSize).append("\" ").append(breadType);
         if (toasted) {sandwich.append(" toasted");}
-        sandwich.append("\nMeat");
+        sandwich.append("\nMeat Option Selected:");
         for (int i = 0; i < meatToppings.size(); i++){
             if (i % 3 == 0){sandwich.append("\n");}
             sandwich.append(meatToppings.get(i)).append(", ");
         }
         if (extraMeatTopping) {sandwich.append("\n\tExtra Meat");}
 
-        sandwich.append("\nCheese");
+        sandwich.append("\nCheese Option Selected:");
         for (int i = 0; i < cheeseToppings.size(); i++){
             if (i % 3 == 0){sandwich.append("\n");}
             sandwich.append(cheeseToppings.get(i)).append(", ");
         }
-        if (extraCheeseTopping) {sandwich.append("\n\tExtra Cheese");}
+        if (extraCheeseTopping) {sandwich.append("\n\tExtra Cheese:");}
 
-        sandwich.append("\nOther Toppings and Sauces");
+        sandwich.append("\nOther Toppings and Sauces Selected:");
         for (int i = 0; i < basicToppings.size(); i++){
             if (i % 3 == 0){sandwich.append("\n");}
             sandwich.append(basicToppings.get(i)).append(", ");
