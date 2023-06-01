@@ -1,19 +1,15 @@
 package com.yearup.deli;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 public class ReceiptFileManager {
 
-    public ReceiptFileManager() {
+    public void createReceipt() {
 
         Path receiptsFolder = Path.of("Receipts");
         try {
