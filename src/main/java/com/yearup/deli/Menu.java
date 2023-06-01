@@ -9,7 +9,7 @@ public class Menu {
     ArrayList<Order> orders = new ArrayList<>();
 
 
-    private void homeScreen(Scanner scanner) {
+    public void homeScreen(Scanner scanner) {
         boolean running = true;
         while (running) {
             System.out.println("(っˆڡˆς) Welcome to Delicious Sandwiches! ( ˘▽˘)っ♨");
