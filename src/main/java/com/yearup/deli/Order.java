@@ -46,7 +46,7 @@ public class Order {
             total += sandwich.getPrice();
         }
         for (Drink drink : drinks) {
-              total += drink.getDrinkPrice();
+              total += drink.getPrice();
         }
         for (Chips chips1 : chips) {
             total += chips1.getPrice();
