@@ -16,10 +16,8 @@ public class Chips {
     }
     @Override
     public String toString() {
-        StringBuilder chip = new StringBuilder();
-        chip.append(kindOfChips);
-        chip.append("\t<<Price: $").append(getPrice()).append(">>");
-        return chip.toString();
+        return kindOfChips +
+                "\t<<Price: $" + getPrice() + ">>";
     }
 
     public double getPrice() {

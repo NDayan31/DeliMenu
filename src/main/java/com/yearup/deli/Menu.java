@@ -67,7 +67,6 @@ public class Menu {
     }
 
     private void checkOut(Scanner scanner) {
-        System.out.println("=============Your Order=============");
         Order order = new Order();
         order.displayCart();
         System.out.println("====================================");
@@ -179,7 +178,7 @@ public class Menu {
         boolean exit = false;
         String drinkSize = "";
         String drinkType = "";
-        while (!exit) {
+        //while (!exit) {
             System.out.println("=============Drinks=============");
             System.out.println("\t1. Coke");
             System.out.println("\t2. Sprite");
@@ -188,9 +187,10 @@ public class Menu {
             System.out.println("\t5. Ginger Ale");
             System.out.println("\t6. Root Beer");
             System.out.println("\t0. Return to main menu");
-            System.out.print("What kind of chips would you like: ");
+            System.out.print("What kind of drink would you like: ");
             int selection = scanner.nextInt();
-            switch (selection) {
+            scanner.nextLine();
+           switch (selection) {
                 case 1: // Coke
                     drinkType = "Coke";
                     System.out.print("Enter size(S,M,L): ");
@@ -234,7 +234,7 @@ public class Menu {
                     System.out.println("Incorrect input");
                     break;
             }
-        }
+        //}
     }
 
     private void drinkSize(String drinkType, String drinkSize) {
