@@ -85,7 +85,6 @@ public class Menu {
             case 1:
                 System.out.println("Thank you For your Order");
                 receiptFileManager.createReceipt();
-                order = null;
                 homeScreen(scanner);
                 break;
             case 2:
