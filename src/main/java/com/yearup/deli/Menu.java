@@ -227,12 +227,12 @@ public class Menu {
 
         boolean exit8 = false;
         while (!exit8) {
-            System.out.println("Would you like any sauce with your order?:");
+            System.out.println("Would you like any sauce with your order?(x when done with selection):");
             for (String s8 : saucesInStock) {
                 System.out.println(s8);
             }
             String sauces = scanner.nextLine();
-            System.out.println("What other Sauces would you like? (x when done with selection):");
+
             if (sauces.equalsIgnoreCase("x")) {
                 exit8 = true;
             } else {
