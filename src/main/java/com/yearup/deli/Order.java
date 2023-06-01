@@ -39,14 +39,19 @@ public class Order {
         System.out.println("===================================");
         System.out.println("\tSub Total: $" + grandTotal());
     }
-
+    public void clearCart() {
+        sandwiches.clear();
+        drinks.clear();
+        chips.clear();
+        System.out.println("You have no items in your cart");
+    }
     public double grandTotal() {
         double total = 0.0;
         for (Sandwich sandwich : sandwiches) {
             total += sandwich.getPrice();
         }
         for (Drink drink : drinks) {
-              total += drink.getDrinkPrice();
+              total += drink.getPrice();
         }
         for (Chips chips1 : chips) {
             total += chips1.getPrice();

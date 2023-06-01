@@ -2,11 +2,9 @@ package com.yearup.deli;
 
 public class Chips {
     private String kindOfChips;
-    private double price;
 
-    public Chips(String kindOfChips, double price) {
+    public Chips(String kindOfChips) {
         this.kindOfChips = kindOfChips;
-        this.price = price;
     }
 
     public String getKindOfChips() {
@@ -20,7 +18,7 @@ public class Chips {
     public String toString() {
         StringBuilder chip = new StringBuilder();
         chip.append(kindOfChips);
-        chip.append("\t<<Price: $").append(price).append(">>");
+        chip.append("\t<<Price: $").append(getPrice()).append(">>");
         return chip.toString();
     }
 

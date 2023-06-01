@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 public class Drink {
     private String drinkType;
     private String drinkSize;
-    private double drinkPrice;
 
     public Drink(String drinkType, String drinkSize) {
         this.drinkType = drinkType;
@@ -20,14 +19,6 @@ public class Drink {
         this.drinkSize = drinkSize;
     }
 
-    public double getDrinkPrice() {
-        return drinkPrice;
-    }
-
-    public void setDrinkPrice(double drinkPrice) {
-        this.drinkPrice = drinkPrice;
-    }
-
     public String getDrinkType() {
         return drinkType;
     }
@@ -40,7 +31,7 @@ public class Drink {
     public String toString() {
         StringBuilder drink = new StringBuilder();
         drink.append(drinkType).append(" ").append(drinkSize);
-        drink.append("\t<<Price: $").append(drinkPrice).append(">>");
+        drink.append("\t<<Price: $").append(getPrice()).append(">>");
         return drink.toString();
     }
 

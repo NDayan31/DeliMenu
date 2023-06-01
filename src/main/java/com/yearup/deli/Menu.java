@@ -53,7 +53,7 @@ public class Menu {
                     addChips(scanner);
                     break;
                 case 4:
-                    checkOut();
+                    checkOut(scanner);
                     break;
                 case 0:
                     cancelOrder();
@@ -66,11 +66,35 @@ public class Menu {
         }
     }
 
-    private void checkOut() {
-
+    private void checkOut(Scanner scanner) {
+        System.out.println("=============Your Order=============");
+        Order order = new Order();
+        order.displayCart();
+        System.out.println("====================================");
+        System.out.println("\t1. Place Your Order");
+        System.out.println("\t2. Cancel Your Order");
+        System.out.println("\t3. Return to Main Menu");
+        System.out.print("What would you like to do?: ");
+        int command = scanner.nextInt();
+        switch (command) {
+            case 1:
+                // Create receipt here
+                break;
+            case 2:
+                cancelOrder();
+                break;
+            case 3:
+                System.out.println("Returning to menu");
+                break;
+            default:
+                System.out.println("Incorrect input");
+                break;
+        }
     }
 
     private void cancelOrder() {
+        Order order = new Order();
+        order.clearCart();
         System.out.println("Thank You, Come Again!");
     }
 
@@ -214,14 +238,18 @@ public class Menu {
     }
 
     private void drinkSize(String drinkType, String drinkSize) {
+        Order order = new Order();
         if (drinkSize.equalsIgnoreCase("s")) {
-            //adds to orders array
+            Drink drink = new Drink(drinkType,drinkSize);
+            order.addDrinks(drink);
             System.out.println("Added to cart");
         } else if (drinkSize.equalsIgnoreCase("m")) {
-            //adds to orders array
+            Drink drink = new Drink(drinkType,drinkSize);
+            order.addDrinks(drink);
             System.out.println("Added to cart");
         } else if (drinkSize.equalsIgnoreCase("l")) {
-            //adds to orders array
+            Drink drink = new Drink(drinkType,drinkSize);
+            order.addDrinks(drink);
             System.out.println("Added to cart");
         } else {
             System.out.println("Incorrect Input");
@@ -230,6 +258,7 @@ public class Menu {
 
     private void addChips(Scanner scanner) {
         String chipType = "";
+        Order order = new Order();
         boolean exit = false;
         while (!exit) {
             System.out.println("=============Chips=============");
@@ -246,40 +275,43 @@ public class Menu {
                 case 1: // Lay's Potato Chips
                     chipType = "Lay's Potato Chips";
                     System.out.println("Added to cart");
-                    //adds to orders array
+                    exit = true;
                     break;
                 case 2: // Tortilla Chips
                     chipType = "Tortilla Chips";
                     System.out.println("Added to cart");
-                    //adds to orders array
+                    exit = true;
                     break;
                 case 3: // Lay's BBQ Chips
                     chipType = "Lay's BBQ Chips";
                     System.out.println("Added to cart");
-                    //adds to orders array
+                    exit = true;
                     break;
                 case 4: // Salt & Vinegar Chips
                     chipType = "Salt & Vinegar Chips";
                     System.out.println("Added to cart");
-                    //adds to orders array
+                    exit = true;
                     break;
                 case 5: // Cheetos
                     chipType = "Cheetos";
                     System.out.println("Added to cart");
-                    //adds to orders array
+                    exit = true;
                     break;
                 case 6: // Doritos
                     chipType = "Doritos";
                     System.out.println("Added to cart");
-                    //adds to orders array
+                    exit = true;
                     break;
                 case 0:
                     System.out.println("Returning to main menu");
+                    exit = true;
                     break;
                 default:
                     System.out.println("Incorrect input");
                     break;
             }
+            Chips chip = new Chips(chipType);
+            order.addChips(chip);
         }
     }
 }
