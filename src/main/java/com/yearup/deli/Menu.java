@@ -53,7 +53,7 @@ public class Menu {
                     addChips(scanner);
                     break;
                 case 4:
-                    checkOut();
+                    checkOut(scanner);
                     break;
                 case 0:
                     cancelOrder();
@@ -66,11 +66,35 @@ public class Menu {
         }
     }
 
-    private void checkOut() {
-
+    private void checkOut(Scanner scanner) {
+        System.out.println("=============Your Order=============");
+        Order order = new Order();
+        order.displayCart();
+        System.out.println("====================================");
+        System.out.println("\t1. Place Your Order");
+        System.out.println("\t2. Cancel Your Order");
+        System.out.println("\t3. Return to Main Menu");
+        System.out.print("What would you like to do?: ");
+        int command = scanner.nextInt();
+        switch (command) {
+            case 1:
+                // Create receipt here
+                break;
+            case 2:
+                cancelOrder();
+                break;
+            case 3:
+                System.out.println("Returning to menu");
+                break;
+            default:
+                System.out.println("Incorrect input");
+                break;
+        }
     }
 
     private void cancelOrder() {
+        Order order = new Order();
+        order.clearCart();
         System.out.println("Thank You, Come Again!");
     }
 
