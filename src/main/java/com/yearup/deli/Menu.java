@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in);
-
+    private Order order;
     ArrayList<Order> orders = new ArrayList<>();
     ReceiptFileManager receiptFileManager = new ReceiptFileManager();
 
@@ -37,6 +37,7 @@ public class Menu {
     }
 
     private void newOrder(Scanner scanner) {
+        order = new Order();
         boolean running = true;
         while (running) {
             System.out.println("1) Add Sandwich");
@@ -73,7 +74,6 @@ public class Menu {
     }
 
     private void checkOut(Scanner scanner) {
-        Order order = new Order();
         order.displayCart();
         System.out.println("====================================");
         System.out.println("\t1. Place Your Order");
@@ -85,6 +85,8 @@ public class Menu {
             case 1:
                 System.out.println("Thank you For your Order");
                 receiptFileManager.createReceipt();
+                order = null;
+                homeScreen(scanner);
                 break;
             case 2:
                 cancelOrder();
@@ -99,7 +101,6 @@ public class Menu {
     }
 
     private void cancelOrder() {
-        Order order = new Order();
         order.clearCart();
         System.out.println("Thank You, Come Again!");
     }
@@ -110,7 +111,6 @@ public class Menu {
         ArrayList<String> ToppingsInStock = new ArrayList<>(Arrays.asList("Lettuce", "Peppers", "Onions", "Tomatoes", "Jalapenos", "Cucumbers", "Pickles", "Guacamole", "Mushrooms"));
         ArrayList<String> saucesInStock = new ArrayList<>(Arrays.asList("Mustard", "Ketchup", "Mayonnaise", "Chipotle", "BBQ"));
 
-        Order order = new Order();
         boolean extraMeat = false;
         boolean extraCheese = false;
         boolean isToasted = false;
@@ -133,7 +133,7 @@ public class Menu {
         boolean exit2 = false;
         int sandwichSize = 0;
         while (!exit2) {
-            System.out.print("Sandwich size (4\", 8\", 12\"): ");
+            System.out.print("Sandwich size (4, 8, 12): ");
             sandwichSize = scanner.nextInt();
             scanner.nextLine();
             switch (sandwichSize) {
@@ -151,7 +151,7 @@ public class Menu {
         while (!exit3) {
             System.out.println("What protein would you like? (X when done selection):");
             for (String s : proteinInStock) {
-                System.out.print(s + " ");
+                System.out.println(s);
             }
             System.out.println();
             String meat = scanner.nextLine();
@@ -178,7 +178,7 @@ public class Menu {
         while (!exit5) {
             System.out.println("What kind of cheese would you like? (x when done with selection):");
             for (String s5 : cheeseInStock) {
-                System.out.print(s5 + " ");
+                System.out.println(s5);
             }
             System.out.println();
             String cheese = scanner.nextLine();
@@ -208,7 +208,7 @@ public class Menu {
         while (!exit7) {
             System.out.println("What other toppings would you like? (x when done with selection):");
             for (String s7 : ToppingsInStock) {
-                System.out.print(s7 + " ");
+                System.out.println(s7);
             }
             System.out.println();
             String basicToppings = scanner.nextLine();
@@ -229,7 +229,7 @@ public class Menu {
         while (!exit8) {
             System.out.println("Would you like any sauce with your order?:");
             for (String s8 : saucesInStock) {
-                System.out.println(s8 + " ");
+                System.out.println(s8);
             }
             String sauces = scanner.nextLine();
             System.out.println("What other Sauces would you like? (x when done with selection):");
@@ -321,7 +321,6 @@ public class Menu {
     }
 
     private void drinkSize(String drinkType, String drinkSize) {
-        Order order = new Order();
         if (drinkSize.equalsIgnoreCase("s")) {
             Drink drink = new Drink(drinkType, drinkSize);
             order.addDrinks(drink);
@@ -342,7 +341,7 @@ public class Menu {
 
     private void addChips(Scanner scanner) {
         String chipType = "";
-        Order order = new Order();
+
         boolean exit = false;
         while (!exit) {
             System.out.println("=============Chips=============");
