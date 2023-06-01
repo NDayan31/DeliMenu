@@ -12,7 +12,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class ReceiptFileManager {
-    /*public static void main(String[] args) {*/
 
     public ReceiptFileManager() {
 
@@ -27,16 +26,15 @@ public class ReceiptFileManager {
             return;
         }
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
+        DateTimeFormatter sdf = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime ldt = LocalDateTime.parse(now );
+        String formattedDateTime = now.format(sdf);
 
-        String fileName = now + ".txt";
+        String fileName = formattedDateTime + ".txt";
         Path filepath = receiptsFolder.resolve(fileName);
 
         try {
             FileWriter fw = new FileWriter(filepath.toFile());
-            fw.write("Help Me");
             fw.close();
             System.out.println("saved");
 
