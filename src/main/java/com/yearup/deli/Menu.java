@@ -28,6 +28,7 @@ public class Menu {
                 case 0:
                     running = false;
                     System.out.println("Have a nice day!");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Invalid option");
@@ -84,7 +85,7 @@ public class Menu {
         switch (command) {
             case 1:
                 System.out.println("Thank you For your Order");
-                receiptFileManager.createReceipt();
+                receiptFileManager.createReceipt(order);
                 homeScreen(scanner);
                 break;
             case 2:
