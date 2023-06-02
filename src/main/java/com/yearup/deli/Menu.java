@@ -259,7 +259,7 @@ public class Menu {
 
 
     private void addDrink(Scanner scanner) {
-        boolean exit = false;
+
         String drinkSize = "";
         String drinkType = "";
         System.out.println("=============Drinks=============");
